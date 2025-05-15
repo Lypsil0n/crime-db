@@ -35,7 +35,7 @@ def main():
                 print(tabulate(res, headers=headers, tablefmt="pretty"))
 
             else:
-                query = ' '.join(args[1:]).capitalize()
+                query = ' '.join(args[1:]).lower()
                 res = dao.get_by_query(conn, query)
                 if len(res) == 0:
                     print("Inga matchningar på sökordet hittades")
