@@ -27,14 +27,21 @@ def main():
             print("exit - Avsluta CrimeDB")
 
         elif args[0].lower() == 'access':
-            if args[1] == 'all':
+            if len(args) == 1 or args[1] == "":
+                print("Ange ett giltigt sökord alternativt 'all'")
+
+            elif args[1] == 'all':
                 res = dao.get_all(conn)
                 print(tabulate(res, headers=headers, tablefmt="pretty"))
 
             else:
                 query = ' '.join(args[1:]).capitalize()
                 res = dao.get_by_query(conn, query)
-                print(tabulate(res, headers=headers, tablefmt="pretty"))
+                if len(res) == 0:
+                    print("Inga matchningar på sökordet hittades")
+                else:
+                    print(f"Hittade totalt {len(res)} matchningar")
+                    print(tabulate(res, headers=headers, tablefmt="pretty"))
 
         else:
             print("Okänt kommando")
