@@ -1,0 +1,1 @@
+\copy MAL FROM 'db/mal.csv' DELIMITER ',' CSV
