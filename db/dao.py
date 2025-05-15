@@ -1,6 +1,7 @@
 import psycopg2 as p
 
 class DAO:
+    "Data access object for communicating with the database"
     def __init__(self):
         self.conn_string = "dbname='crimedb' user='dbadm' password='dbadm' host='localhost' port='5432'"
 
