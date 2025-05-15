@@ -13,22 +13,8 @@ CREATE TABLE mal
     tilltalad VARCHAR(255) NOT NULL,
     personnummer VARCHAR(13) NOT NULL,
     brottsrubricering VARCHAR(255) NOT NULL,
+    datum VARCHAR(255) NOT NULL,
     lank VARCHAR(255)
 );
-
-CREATE PROCEDURE add_record(
-    malnummer VARCHAR(20),
-    tilltalad VARCHAR(255),
-    personnummer VARCHAR(13),
-    brottsrubricering VARCHAR(255),
-    lank VARCHAR(255)
-)
-LANGUAGE plpgsql
-AS $$
-BEGIN
-    INSERT INTO mal (malnummer, tilltalad, personnummer, brottsrubricering, lank)
-    VALUES (malnummer, tilltalad, personnummer, brottsrubricering, lank);
-END;
-$$;
 
 \i 'db/insert.sql'

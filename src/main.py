@@ -5,7 +5,7 @@ def main():
     dao = DAO()
     conn = dao.connect()
 
-    headers = ["malnummer", "tilltalad", "personnummer", "brottsrubricering", "lank"]
+    headers = ["Målnummer", "Tilltalad", "Personnummer", "Brottsrubricering", "Datum", "Länk"]
     running = True
 
 
@@ -22,7 +22,7 @@ def main():
 
         elif args[0].lower() == 'help':
             print("help - Lista alla kommandon")
-            print("access <sökord> - Sök efter ett mål baserat på målnummer, namn på tilltalad, personnummer eller brottsrubricering")
+            print("access <sökord> - Sök efter ett mål baserat på målnummer, namn på tilltalad, personnummer, brottsrubricering eller datum")
             print("access all - Lista alla tillgängliga domar")
             print("exit - Avsluta CrimeDB")
 

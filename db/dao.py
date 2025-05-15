@@ -17,7 +17,7 @@ class DAO:
     def get_by_query(self, conn, query):
         "Fetch records based on query"
         cursor = conn.cursor()
-        cursor.execute(f"SELECT * FROM mal where malnummer like '%{query}%' OR tilltalad like '%{query}%' OR personnummer like '%{query}%' OR brottsrubricering like '%{query}%'")
+        cursor.execute(f"SELECT * FROM mal where malnummer like '%{query}%' OR tilltalad like '%{query}%' OR personnummer like '%{query}%' OR brottsrubricering like '%{query}%' OR datum like '%{query}%'")
         res = cursor.fetchall()
 
         cursor.close()
